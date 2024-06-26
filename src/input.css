@@ -1,0 +1,121 @@
+.part-one {
+  background-image: url('../images/bg-main-desktop.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  height: 100dvh !important;
+  position: relative !important;
+}
+.part-two{
+  height: 100vh !important;
+  display: flex;
+  justify-content: center;
+  margin-top: -5rem;
+  /* align-items: center; */
+}
+.formss{
+  width: 30rem;
+}
+.card-front{
+  background-image: url(../images/bg-card-front.png) !important;
+  height: 170px;  
+  background-size: cover !important;
+  width: 300px;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  position: absolute !important;
+  right: -4rem;
+  padding: 1rem 1.5rem;
+  top: 7rem;
+}
+.card-logo img{
+  width: 40px;
+}
+.numbers{
+  letter-spacing: 1.4px;
+  font-size: 1.4rem !important;
+}
+.card-back{
+  background-image: url(../images/bg-card-back.png) !important;
+  height: 170px;  
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  width: 300px;
+  position: absolute !important;
+  bottom: 0 !important;
+  top: 19rem;
+  right: -8rem !important;
+}
+
+@media screen and (max-width: 576px) {
+  .part-one {
+    background-image: url('../images/bg-main-mobile.png') !important;
+    position: relative !important;
+    height: 30dvh !important;
+  }
+  .part-two{
+  height: 70dvh !important;
+  }
+  .formss{
+    width: 100% !important;
+  }
+  .card-front{
+    height: 170px;  
+    background-size: cover !important;
+    width: 300px;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    position: absolute !important;
+    top: 7rem;
+    left: 1rem;
+    bottom: -9rem;
+    z-index: 3;
+
+  }
+  .card-back{
+    height: 170px;  
+    background-size: cover !important;
+    width: 300px;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    position: absolute !important;
+    top: 0;
+    left: 5rem;
+    bottom: -9rem;
+    
+  }
+}
+
+
+.bg-cover {
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+}
+.confirm-btn{
+  background-color: hsl(278, 68%, 11%) !important;
+  width: 100%;
+}
+/* .part-two{
+  height: 100vh !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+.formss{
+  display: grid !important;
+  place-content: center !important;
+  margin-top: 8rem !important;
+
+}
+
+.numbers{
+  margin-top: 2rem;
+}
+.cvc-inputss{
+  margin-top: 4.5rem;
+  margin-right: 2rem;
+  color: white;
+  
+}
