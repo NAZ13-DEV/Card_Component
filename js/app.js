@@ -28,31 +28,44 @@ const cardNumberError = document.querySelector(".red-sign-number");
 const formatCardNumber = (number) => number.replace(/(\d{4})(?=\d)/g, '$1 ');
 
 const validateCard = () => {
-    let value = numberInput.value;
+    let value = numberInput.value.replace(/\s+/g, ''); // Remove spaces before validation
 
+    // Limit the length to 16 digits
     if (value.length > 16) {
         value = value.slice(0, 16);
-        numberInput.value = value;
+        numberInput.value = formatCardNumber(value); // Format the input immediately
     }
 
-    if (!/^\d+$/.test(value)) {
+    // Check for non-digit characters
+    if (!/^\d*$/.test(value)) {
         cardNumberError.classList.remove("d-none");
         cardNumberError.classList.add("d-block");
+        cardNumberError.textContent = "!Only numbers are allowed.";
         return false;
-    } else if (value === "") {
+    }
+
+    // Check if the field is empty
+    if (value === "") {
         cardNumberError.classList.remove("d-none");
         cardNumberError.classList.add("d-block");
         cardNumberError.textContent = "!Field can't be left Empty.";
         return false;
-    } else {
-        cardNumberError.classList.add("d-none");
-        cardNumberError.classList.remove("d-block");
-        cNumber.innerHTML = formatCardNumber(value);
-        return true;
     }
+
+    // If all conditions pass, hide the error and format the card number
+    cardNumberError.classList.add("d-none");
+    cardNumberError.classList.remove("d-block");
+
+    // Format the card number for the display element and input field
+    numberInput.value = formatCardNumber(value); // Format with spaces in the input field
+    cNumber.innerHTML = formatCardNumber(value); // Format with spaces in the display element
+
+    return true;
 };
 
+// Add the input event listener to trigger validation and formatting while typing
 numberInput.addEventListener("input", validateCard);
+
 
 // Month validation
 const monthInput = document.querySelector(".month-input");
